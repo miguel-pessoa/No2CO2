@@ -1,0 +1,13 @@
+apply plugin: "war"
+
+bootWar {
+    mainClassName = "com.ist.no2co2.No2Co2App"
+    includes = ["WEB-INF/**", "META-INF/**"]
+}
+
+war {
+    webAppDirName = "build/resources/main/static/"
+    enabled = true
+    archiveExtension = "war.original"
+    includes = ["WEB-INF/**", "META-INF/**"]
+}
