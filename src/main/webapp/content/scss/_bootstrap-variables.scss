@@ -1,6 +1,20 @@
+@import '~bootswatch/dist/flatly/variables';
+
 /*
 * Bootstrap overrides https://getbootstrap.com/docs/4.0/getting-started/theming/
 * All values defined in bootstrap source
 * https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss can be overwritten here
 * Make sure not to add !default to values here
 */
+$primary: #abcb63;
+$secondary: #508827;
+$success: $green;
+$info: black;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-200;
+$dark: $gray-700;
+$title: black;
+$title2: white;
+$text: white;
+$text2: white;

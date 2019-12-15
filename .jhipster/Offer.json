@@ -1,0 +1,45 @@
+{
+    "name": "Offer",
+    "fields": [
+        {
+            "fieldName": "pointCost",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemsAvailable",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "partner",
+            "otherEntityRelationshipName": "offer",
+            "relationshipName": "partner",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "offer",
+            "relationshipName": "employee",
+            "otherEntityField": "firstName",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191112134245",
+    "entityTableName": "offer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

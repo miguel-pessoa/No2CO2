@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { PartnerOffersComponent } from 'app/account/partner-offers/partner-offers.component';
 
 import { No2Co2SharedModule } from 'app/shared/shared.module';
 
@@ -21,7 +22,8 @@ import { accountState } from './account.route';
     PasswordStrengthBarComponent,
     PasswordResetInitComponent,
     PasswordResetFinishComponent,
-    SettingsComponent
+    SettingsComponent,
+    PartnerOffersComponent
   ]
 })
 export class No2Co2AccountModule {}

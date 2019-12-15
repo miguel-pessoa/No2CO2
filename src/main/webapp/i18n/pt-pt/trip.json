@@ -1,0 +1,25 @@
+{
+  "no2Co2App": {
+    "trip": {
+      "home": {
+        "title": "Trips",
+        "createLabel": "Criar novo(a) Trip",
+        "createOrEditLabel": "Criar ou editar Trip",
+        "notFound": "Nenhum Trips encontrado"
+      },
+      "created": "Um novo Trip foi criado com o identificador {{ param }}",
+      "updated": "Trip com identificador {{ param }} foi actualizado",
+      "deleted": "Trip com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Trip {{ id }}?"
+      },
+      "detail": {
+        "title": "Trip"
+      },
+      "pointAmout": "Point Amout",
+      "from": "From",
+      "to": "To",
+      "employee": "Employee"
+    }
+  }
+}

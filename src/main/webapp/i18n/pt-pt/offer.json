@@ -1,0 +1,26 @@
+{
+  "no2Co2App": {
+    "offer": {
+      "home": {
+        "title": "Offers",
+        "createLabel": "Criar novo(a) Offer",
+        "createOrEditLabel": "Criar ou editar Offer",
+        "notFound": "Nenhum Offers encontrado"
+      },
+      "created": "Um novo Offer foi criado com o identificador {{ param }}",
+      "updated": "Offer com identificador {{ param }} foi actualizado",
+      "deleted": "Offer com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Offer {{ id }}?"
+      },
+      "detail": {
+        "title": "Offer"
+      },
+      "pointCost": "Point Cost",
+      "name": "Name",
+      "itemsAvailable": "Items Available",
+      "partner": "Partner",
+      "employee": "Employee"
+    }
+  }
+}

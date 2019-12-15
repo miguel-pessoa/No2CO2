@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="no2Co2App.tripHistory.home.title">Trip Histories</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-trip-history" [routerLink]="['/trip-history/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="no2Co2App.tripHistory.home.createLabel">
+            Create a new Trip History
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="tripHistories?.length === 0">
+        <span jhiTranslate="no2Co2App.tripHistory.home.notFound">No tripHistories found</span>
+    </div>
+    <div class="table-responsive" *ngIf="tripHistories?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="startDate"><span jhiTranslate="no2Co2App.tripHistory.startDate">Start Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="endDate"><span jhiTranslate="no2Co2App.tripHistory.endDate">End Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="language"><span jhiTranslate="no2Co2App.tripHistory.language">Language</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="trip.id"><span jhiTranslate="no2Co2App.tripHistory.trip">Trip</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="employee.id"><span jhiTranslate="no2Co2App.tripHistory.employee">Employee</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let tripHistory of tripHistories ;trackBy: trackId">
+                <td><a [routerLink]="['/trip-history', tripHistory.id, 'view' ]">{{tripHistory.id}}</a></td>
+                <td>{{tripHistory.startDate | date:'medium'}}</td>
+                <td>{{tripHistory.endDate | date:'medium'}}</td>
+                <td jhiTranslate="{{'no2Co2App.Language.' + tripHistory.language}}">{{tripHistory.language}}</td>
+                <td>
+                    <div *ngIf="tripHistory.trip">
+                        <a [routerLink]="['/trip', tripHistory.trip?.id, 'view' ]" >{{tripHistory.trip?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tripHistory.employee">
+                        <a [routerLink]="['/employee', tripHistory.employee?.id, 'view' ]" >{{tripHistory.employee?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/trip-history', tripHistory.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/trip-history', tripHistory.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/trip-history', { outlets: { popup: tripHistory.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

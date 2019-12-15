@@ -1,0 +1,123 @@
+entity Region {
+	regionName String
+}
+
+entity Country {
+	countryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity Trip {
+	pointAmout Long
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Task {
+	title String,
+	description String
+}
+
+entity Partner {
+	name String
+}
+
+entity Offer {
+	pointCost Long,
+    name String,
+    itemsAvailable Long
+}
+
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	joinDate Instant,
+	pointAmount Long
+}
+
+entity Job {
+	jobTitle String,
+	minSalary Long,
+	maxSalary Long
+}
+
+entity TripHistory {
+	startDate Instant,
+	endDate Instant,
+	language Language
+}
+
+enum Language {
+    ENGLISH, PORTUGUESE
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Partner{location} to Location,
+    Offer{partner} to Partner,
+	Trip{from} to Location,
+    Trip{to} to Location
+}
+
+relationship ManyToMany {
+	Offer{employee(firstName)} to Employee{offer},
+	Job{task(title)} to Task{job}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+
+	Employee{job} to Job,
+	/**
+	* A relationship
+	*/
+	Trip{employee} to
+	/**
+	* Another side of the same relationship
+	*/
+	Employee
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	TripHistory{trip} to Trip,
+	TripHistory{employee} to Employee
+}
+
+// Set pagination options
+paginate TripHistory, Employee with infinite-scroll
+paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

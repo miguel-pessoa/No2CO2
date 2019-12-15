@@ -7,11 +7,22 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "region": "Region",
+        "country": "Country",
+        "location": "Location",
+        "trip": "Trip",
+        "task": "Task",
+        "partner": "Partner",
+        "offer": "Partner offers",
+        "employee": "Employee",
+        "job": "Job",
+        "tripHistory": "Trip History",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
         "main": "Account",
         "settings": "Settings",
+        "offers": "Offers",
         "password": "Password",
         "sessions": "Sessions",
         "login": "Sign in",

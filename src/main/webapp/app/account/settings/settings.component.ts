@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { TripService } from 'app/entities/trip/trip.service';
 import { JhiLanguageService } from 'ng-jhipster';
 
 import { AccountService } from 'app/core/auth/account.service';
@@ -8,10 +10,13 @@ import { JhiLanguageHelper } from 'app/core/language/language.helper';
 
 @Component({
   selector: 'jhi-settings',
-  templateUrl: './settings.component.html'
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
   error: string;
+  points: number;
+  co2: number;
   success: string;
   languages: any[];
   settingsForm = this.fb.group({
@@ -29,14 +34,23 @@ export class SettingsComponent implements OnInit {
     private accountService: AccountService,
     private fb: FormBuilder,
     private languageService: JhiLanguageService,
-    private languageHelper: JhiLanguageHelper
+    private languageHelper: JhiLanguageHelper,
+    private tripService: TripService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    this.points = this.tripService.getPoints();
+    this.co2 = this.tripService.getCo2();
     this.accountService.identity().subscribe(account => {
       this.updateForm(account);
     });
     this.languages = this.languageHelper.getAll();
+  }
+
+  nextStep() {
+    this.tripService.nextStep();
+    this.router.navigateByUrl('/account/partner-offersP');
   }
 
   save() {

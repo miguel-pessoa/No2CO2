@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import './vendor';
 import { No2Co2SharedModule } from 'app/shared/shared.module';
 import { No2Co2CoreModule } from 'app/core/core.module';
+import { TripEndedModalComponent } from 'app/trip-ended/trip-ended-modal.component';
 import { No2Co2AppRoutingModule } from './app-routing.module';
 import { No2Co2HomeModule } from './home/home.module';
 import { No2Co2EntityModule } from './entities/entity.module';
@@ -25,7 +26,15 @@ import { ErrorComponent } from './layouts/error/error.component';
     No2Co2EntityModule,
     No2Co2AppRoutingModule
   ],
-  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+  declarations: [
+    JhiMainComponent,
+    NavbarComponent,
+    ErrorComponent,
+    PageRibbonComponent,
+    ActiveMenuDirective,
+    FooterComponent,
+    TripEndedModalComponent
+  ],
   bootstrap: [JhiMainComponent]
 })
 export class No2Co2AppModule {}

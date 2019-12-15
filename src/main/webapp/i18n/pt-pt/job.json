@@ -1,0 +1,26 @@
+{
+  "no2Co2App": {
+    "job": {
+      "home": {
+        "title": "Jobs",
+        "createLabel": "Criar novo(a) Job",
+        "createOrEditLabel": "Criar ou editar Job",
+        "notFound": "Nenhum Jobs encontrado"
+      },
+      "created": "Um novo Job foi criado com o identificador {{ param }}",
+      "updated": "Job com identificador {{ param }} foi actualizado",
+      "deleted": "Job com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Job {{ id }}?"
+      },
+      "detail": {
+        "title": "Job"
+      },
+      "jobTitle": "Job Title",
+      "minSalary": "Min Salary",
+      "maxSalary": "Max Salary",
+      "employee": "Employee",
+      "task": "Task"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "no2Co2App": {
+    "tripHistory": {
+      "home": {
+        "title": "Trip Histories",
+        "createLabel": "Create a new Trip History",
+        "createOrEditLabel": "Create or edit a Trip History",
+        "notFound": "No Trip Histories found"
+      },
+      "created": "A new Trip History is created with identifier {{ param }}",
+      "updated": "A Trip History is updated with identifier {{ param }}",
+      "deleted": "A Trip History is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Trip History {{ id }}?"
+      },
+      "detail": {
+        "title": "Trip History"
+      },
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "language": "Language",
+      "trip": "Trip",
+      "employee": "Employee"
+    }
+  }
+}

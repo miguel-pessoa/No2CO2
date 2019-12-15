@@ -1,0 +1,38 @@
+<div style="margin:10px">
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+            <h2>Partner Offers</h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="points"><span class="main-text">Current EcoPoints: </span><span class="point">{{this.points}}</span> </div>
+                </div>
+
+                <div class="col-sm-8" style="margin-top: 25px">
+                    <div class="offer" *ngFor="let offer of offers">
+                        <div class="image">
+                            <img [src]="offer.imageUrl">
+                        </div>
+                        <div class="text">
+                            <span class="brand">{{offer.title}} - <span class="category">{{offer.category}}</span></span>
+                            <span class="message">{{offer.text}}</span>
+                        </div>
+                        <div  *ngIf="!offer.used"(click)="click(offer)" [ngClass]="{'disabled':points < offer.cost}" class="button">Checkout for <span class="cost">{{offer.cost}}<div class="icon"></div></span></div>
+                        <div *ngIf="offer.used" (click)="click(offer)" class="button">Exchanged! <br>More details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="selectedOffer" *ngIf="selectedOffer">
+
+    <div class="circle1">
+        <span class="main-text" *ngIf="!selectedOffer.used">Exchange {{selectedOffer.cost}} EcoPoints for "{{selectedOffer.text}}"?</span>
+        <img class="qr" [src]="'../../../content/images/qr.png'" *ngIf="selectedOffer.used"></img>
+    </div>
+    <div class="circle2"></div>
+    <div class="circle3" (click)="close()"><div class="close"><fa-icon [icon]="'times'"></fa-icon></div></div>
+    <div class="circle4" (click)="yes(selectedOffer)"><span>Yes</span></div>
+</div>

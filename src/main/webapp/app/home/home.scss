@@ -2,22 +2,198 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_3.svg') no-repeat center top;
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+
+.trip-ended {
+  position: fixed;
+  z-index: 2001;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.circle1 {
+  position: absolute;
+  z-index: 2002;
+  top: 30%;
+
+  padding-top: 60px;
+  height: 300px;
+  width: 300px;
+  vertical-align: center;
+  background-color: #abcb63;
+  border-radius: 400px;
+  opacity: 1 !important;
+  margin-left: calc(50% - 150px);
+  text-align: center;
+  .main-text {
+    font-size: 45px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+  }
+  .points {
+    font-size: 25px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+  }
+  .step {
+    display: block;
+    font-size: 20px;
+    width: 70%;
+    margin-left: 15%;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.circle2 {
+  position: absolute;
+  z-index: 2002;
+  top: 24%;
+  height: 100px;
+  width: 100px;
+  vertical-align: center;
+  background-color: #abcb63;
+  border-radius: 400px;
+  opacity: 1 !important;
+  margin-left: calc(50% - 120px);
+  padding-top: 5px;
+  padding-left: 25px;
+  .co2 {
+    font-size: 25px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+  }
+}
+.circle3 {
+  position: absolute;
+  z-index: 2002;
+  top: 18%;
+  height: 60px;
+  width: 60px;
+  vertical-align: center;
+  background-color: #abcb63;
+  border-radius: 400px;
+  opacity: 1 !important;
+  margin-left: calc(50% - 70px);
+}
+
+.circle4 {
+  position: absolute;
+  z-index: 2002;
+  top: 60%;
+  height: 90px;
+  width: 90px;
+  vertical-align: center;
+  background-color: #abcb63;
+  border-radius: 400px;
+  opacity: 1 !important;
+  margin-left: calc(50% + 70px);
+  cursor: pointer;
+  * {
+    position: absolute;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+    padding-left: 31%;
+    padding-top: 31%;
+  }
+}
+
+.circle5 {
+  position: absolute;
+  z-index: 2002;
+  top: 19%;
+  height: 60px;
+  width: 60px;
+  vertical-align: center;
+  margin-left: calc(50% + 70px);
+  .logo-img {
+  }
+}
+.map {
+  width: calc(100% - 10px);
+  height: calc(100%);
+}
+
+.margin {
+  margin: 10px 15px;
+  width: calc(100% - 30px);
+}
+
+.login {
+  margin-right: 0;
+  text-align: center;
+  padding-top: 20px;
+  display: block;
+  height: 100%;
+  background: blanchedalmond;
+  background-size: cover;
+}
+
+.match-parent {
+  width: 100%;
+  height: calc(100%);
+}
+
+.logo-img {
+  height: 155px;
+  width: 100%;
+  display: block;
+  margin: 20px 0;
+  vertical-align: middle;
+  text-align: center;
+  background: url('../../content/images/logo-jhipster.png') no-repeat center center;
   background-size: contain;
 }
 
-/* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (-moz-min-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-  .hipster {
-    background: url('../../content/images/jhipster_family_member_3.svg') no-repeat center top;
-    background-size: contain;
+.button.success {
+  font-size: 25px;
+  background-color: #abcb63;
+  border-radius: 4px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+::ng-deep {
+  .mapbox-directions-instructions {
+    visibility: hidden;
+    height: 0;
+  }
+
+  .directions-control.directions-control-directions {
+    background-color: unset;
+    overflow: unset;
+  }
+
+  .mapbox-directions-route-summary {
+    background-color: #8fa956 !important;
+    bottom: calc(-30%);
+    position: absolute;
+    margin-left: 10px;
+    border-radius: 20px;
+  }
+
+  .modal-dialog {
+    width: 95% !important;
+  }
+
+  .mapboxgl-canvas {
+    height: 100% !important;
+    z-index: 99;
+    position: relative;
+  }
+  .mapboxgl-control-container {
+    position: relative;
+    z-index: 1000;
+  }
+  .directions-control.directions-control-inputs {
+    position: relative;
+    z-index: 1000;
   }
 }

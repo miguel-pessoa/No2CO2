@@ -1,0 +1,50 @@
+.circle5 {
+  position: relative;
+  z-index: 2002;
+  width: 100%;
+  vertical-align: center;
+
+  .user-image {
+    position: relative;
+    opacity: 0.5;
+    height: 155px;
+    width: 100%;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    background: url('../../../content/images/user.png') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 30px;
+  }
+}
+
+.step {
+  display: block;
+  font-size: 20px;
+  width: 70%;
+  margin-left: 15%;
+  color: #508827;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.circle1 {
+  position: relative;
+  vertical-align: center;
+  text-align: center;
+  .main-text {
+    font-size: 30px;
+    text-align: center;
+    vertical-align: center;
+    color: black;
+    font-weight: 600;
+  }
+  .points {
+    font-size: 30px;
+    text-align: center;
+    vertical-align: center;
+    color: #508827;
+    font-weight: 300;
+  }
+}

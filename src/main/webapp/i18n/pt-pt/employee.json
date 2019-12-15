@@ -1,0 +1,33 @@
+{
+  "no2Co2App": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "createLabel": "Criar novo(a) Employee",
+        "createOrEditLabel": "Criar ou editar Employee",
+        "notFound": "Nenhum Employees encontrado"
+      },
+      "created": "Um novo Employee foi criado com o identificador {{ param }}",
+      "updated": "Employee com identificador {{ param }} foi actualizado",
+      "deleted": "Employee com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Employee {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "joinDate": "Join Date",
+      "pointAmount": "Point Amount",
+      "trip": "Trip",
+      "job": "Job",
+      "offer": "Offer",
+      "help": {
+        "firstName": "The firstname attribute."
+      }
+    }
+  }
+}

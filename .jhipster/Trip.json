@@ -1,0 +1,44 @@
+{
+    "name": "Trip",
+    "fields": [
+        {
+            "fieldName": "pointAmout",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "trip",
+            "relationshipName": "from",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "trip",
+            "relationshipName": "to",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "trip",
+            "javadoc": "A relationship",
+            "relationshipName": "employee"
+        }
+    ],
+    "changelogDate": "20191112134242",
+    "entityTableName": "trip",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

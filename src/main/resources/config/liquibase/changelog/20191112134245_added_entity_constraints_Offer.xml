@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Offer.
+    -->
+    <changeSet id="20191112134245-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="partner_id"
+                                 baseTableName="offer"
+                                 constraintName="fk_offer_partner_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="partner"/>
+
+        <addForeignKeyConstraint baseColumnNames="offer_id"
+                                 baseTableName="offer_employee"
+                                 constraintName="fk_offer_employee_offer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offer"/>
+
+        <addForeignKeyConstraint baseColumnNames="employee_id"
+                                 baseTableName="offer_employee"
+                                 constraintName="fk_offer_employee_employee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employee"/>
+        
+    </changeSet>
+</databaseChangeLog>

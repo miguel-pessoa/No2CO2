@@ -1,0 +1,23 @@
+{
+  "no2Co2App": {
+    "partner": {
+      "home": {
+        "title": "Partners",
+        "createLabel": "Criar novo(a) Partner",
+        "createOrEditLabel": "Criar ou editar Partner",
+        "notFound": "Nenhum Partners encontrado"
+      },
+      "created": "Um novo Partner foi criado com o identificador {{ param }}",
+      "updated": "Partner com identificador {{ param }} foi actualizado",
+      "deleted": "Partner com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Partner {{ id }}?"
+      },
+      "detail": {
+        "title": "Partner"
+      },
+      "name": "Name",
+      "location": "Location"
+    }
+  }
+}

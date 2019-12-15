@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tripHistory">
+            <h2><span jhiTranslate="no2Co2App.tripHistory.detail.title">Trip History</span> {{tripHistory.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="no2Co2App.tripHistory.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{tripHistory.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="no2Co2App.tripHistory.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{tripHistory.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="no2Co2App.tripHistory.language">Language</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'no2Co2App.Language.' + tripHistory.language}}">{{tripHistory.language}}</span>
+                </dd>
+                <dt><span jhiTranslate="no2Co2App.tripHistory.trip">Trip</span></dt>
+                <dd>
+                    <div *ngIf="tripHistory.trip">
+                        <a [routerLink]="['/trip', tripHistory.trip?.id, 'view']">{{tripHistory.trip?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="no2Co2App.tripHistory.employee">Employee</span></dt>
+                <dd>
+                    <div *ngIf="tripHistory.employee">
+                        <a [routerLink]="['/employee', tripHistory.employee?.id, 'view']">{{tripHistory.employee?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/trip-history', tripHistory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

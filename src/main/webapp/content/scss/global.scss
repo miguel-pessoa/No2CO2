@@ -2,7 +2,6 @@
 @import '~bootstrap/scss/functions';
 @import '~bootswatch/dist/flatly/variables';
 @import '~bootstrap/scss/variables';
-
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
@@ -15,8 +14,18 @@ h4 {
   font-weight: 300;
 }
 
-a:hover {
+body,
+html {
+  height: 100%;
+}
+
+body,
+.form-control {
+  font-size: 1.4375rem;
+}
+a {
   /* make sure browsers use the pointer cursor for anchors, even with no href */
+  color: black;
   cursor: pointer;
 }
 
@@ -164,3 +173,7 @@ ui bootstrap tweaks
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+::ng-deep .modal-dialog {
+  width: 95% !important;
+}

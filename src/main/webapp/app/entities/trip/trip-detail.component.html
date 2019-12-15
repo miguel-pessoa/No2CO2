@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="trip">
+            <h2><span jhiTranslate="no2Co2App.trip.detail.title">Trip</span> {{trip.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="no2Co2App.trip.pointAmout">Point Amout</span></dt>
+                <dd>
+                    <span>{{trip.pointAmout}}</span>
+                </dd>
+                <dt><span jhiTranslate="no2Co2App.trip.from">From</span></dt>
+                <dd>
+                    <div *ngIf="trip.from">
+                        <a [routerLink]="['/location', trip.from?.id, 'view']">{{trip.from?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="no2Co2App.trip.to">To</span></dt>
+                <dd>
+                    <div *ngIf="trip.to">
+                        <a [routerLink]="['/location', trip.to?.id, 'view']">{{trip.to?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/trip', trip.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
